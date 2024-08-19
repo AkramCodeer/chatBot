@@ -2,12 +2,6 @@
     <div class="py-4 container-fluid">
         <div class="mt-4 user">
             <div class="col-12">
-                <div class="alert alert-danger text-white">
-                    <strong>Add, Edit, Delete features are not functional. This is a
-                        PRO feature! Click <a href="https://www.creative-tim.com/live/vue-argon-dashboard-pro-laravel"
-                            target="_blank">here</a> to see the PRO product.
-                    </strong>
-                </div>
                 <div class="card">
                     <!-- Card header -->
                     <div class="card-header border-bottom">
@@ -16,7 +10,7 @@
                                 <h5 class="mb-0 ms-0">Users</h5>
                             </div>
                             <div class="col-6 text-end">
-                                <material-button class="float-right btn btm-sm" @click="showProMessage()">
+                                <material-button class="float-right btn btm-sm" @click="openAddUserModal">
                                     <i class="fas fa-user-plus me-2"></i>
                                     Add User
                                 </material-button>
@@ -26,7 +20,6 @@
 
                     <!-- Card body -->
                     <div class="px-0 pb-0 card-body">
-
                         <!-- Table -->
                         <table class="table table-flush mt-3">
                             <thead class="thead-light">
@@ -38,8 +31,19 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <user-item-list :name="me.name" :email="me.email"
-                                    :created="me.created_at"></user-item-list>
+                                <tr v-for="user in users" :key="user.id">
+                                    <td>{{ user.name }}</td>
+                                    <td>{{ user.email }}</td>
+                                    <td>{{ user.created_at }}</td>
+                                    <td class="text-end">
+                                        <material-button @click="openEditUserModal(user)">
+                                            <i class="fas fa-edit me-2"></i>Edit
+                                        </material-button>
+                                        <material-button @click="deleteUser(user.id)">
+                                            <i class="fas fa-trash me-2"></i>Delete
+                                        </material-button>
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -51,31 +55,42 @@
 
 <script>
 import MaterialButton from "@/components/MaterialButton.vue";
-import UserItemList from "./UserItemList.vue";
-import showSwal from "@/mixins/showSwal";
 
 export default {
     name: "UsersList",
     components: {
         MaterialButton,
-        UserItemList
     },
     data() {
         return {
-            me: {}
-        }
+            users: [], // List of users
+            selectedUser: null // Selected user for editing
+        };
     },
     async mounted() {
-        await this.$store.dispatch('profile/getProfile');
-        this.me = this.$store.getters['profile/getUserProfile'];
+        await this.loadUsers(); // Load users when component is mounted
     },
     methods: {
-        showProMessage() {
-            showSwal.methods.showSwal({
-                type: "error",
-                message: 'This is a PRO feature.',
-                width: 500
-            });
+        async loadUsers() {
+            // Fetch the users from an API or store
+            this.users = await this.$store.dispatch('user/getUsers');
+        },
+        openAddUserModal() {
+            // Logic to open a modal for adding a new user
+            // Example: this.$emit('openModal', 'addUser');
+            console.log("Add User modal opened");
+        },
+        openEditUserModal(user) {
+            // Store the selected user data for editing
+            this.selectedUser = user;
+            // Logic to open the modal
+            // Example: this.$emit('openModal', 'editUser', user);
+            console.log("Edit User modal opened for:", user);
+        },
+        deleteUser(userId) {
+            // Logic to delete the user by userId
+            this.users = this.users.filter(user => user.id !== userId);
+            console.log("User deleted:", userId);
         }
     }
 };
