@@ -4,7 +4,7 @@
 =========================================================
 
 * Product Page: https://creative-tim.com/product/vue-material-dashboard-2
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
+* Copyright 2022 . (https://www.creative-tim.com)
 
 Coded by www.creative-tim.com
 

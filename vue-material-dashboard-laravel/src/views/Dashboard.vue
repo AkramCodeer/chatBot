@@ -1,279 +1,88 @@
 <template>
-  <div class="py-4 container-fluid">
-    <div class="row mb-4">
-      <div class="col-lg-12 position-relative z-index-2">
-        <div class="row">
-          <div class="col-lg-3 col-md-6 col-sm-6">
-            <mini-statistics-card
-              :title="{ text: 'Today\'s Money', value: '$53k' }"
-              detail="<span class='text-success text-sm font-weight-bolder'>+55%</span> than last week"
-              :icon="{
-                name: 'weekend',
-                color: 'text-white',
-                background: 'dark',
-              }"
-            />
-          </div>
-          <div class="col-lg-3 col-md-6 col-sm-6 mt-lg-0 mt-4">
-            <mini-statistics-card
-              :title="{ text: 'Today\'s Users', value: '2,300' }"
-              detail="<span class='text-success text-sm font-weight-bolder'>+3%</span> than last month"
-              :icon="{
-                name: 'leaderboard',
-                color: 'text-white',
-                background: 'primary',
-              }"
-            />
-          </div>
-          <div class="col-lg-3 col-md-6 col-sm-6 mt-lg-0 mt-4">
-            <mini-statistics-card
-              :title="{ text: 'New Clients', value: '3,462' }"
-              detail="<span class='text-danger text-sm font-weight-bolder'>-2%</span> than yesterday"
-              :icon="{
-                name: 'person',
-                color: 'text-white',
-                background: 'success',
-              }"
-            />
-          </div>
-          <div class="col-lg-3 col-md-6 col-sm-6 mt-lg-0 mt-4">
-            <mini-statistics-card
-              :title="{ text: 'Sales', value: '$103,430' }"
-              detail="<span class='text-success text-sm font-weight-bolder'>+5%</span> Just updated"
-              :icon="{
-                name: 'weekend',
-                color: 'text-white',
-                background: 'info',
-              }"
-            />
-          </div>
-        </div>
-        <div class="row mt-4">
-          <div class="col-lg-4 col-md-6 mt-4">
-            <chart-holder-card
-              title="Website Views"
-              subtitle="Last Campaign Performance"
-              update="campaign sent 2 days ago"
-            >
-              <reports-bar-chart
-                :chart="{
-                  labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
-                  datasets: {
-                    label: 'Sales',
-                    data: [50, 20, 10, 22, 50, 10, 40],
-                  },
-                }"
-              />
-            </chart-holder-card>
-          </div>
-          <div class="col-lg-4 col-md-6 mt-4">
-            <chart-holder-card
-              title="Daily Sales"
-              subtitle="(<span class='font-weight-bolder'>+15%</span>) increase in today sales."
-              update="updated 4 min ago"
-              color="success"
-            >
-              <reports-line-chart
-                :chart="{
-                  labels: [
-                    'Apr',
-                    'May',
-                    'Jun',
-                    'Jul',
-                    'Aug',
-                    'Sep',
-                    'Oct',
-                    'Nov',
-                    'Dec',
-                  ],
-                  datasets: {
-                    label: 'Mobile apps',
-                    data: [50, 40, 300, 320, 500, 350, 200, 230, 500],
-                  },
-                }"
-              />
-            </chart-holder-card>
-          </div>
-          <div class="col-lg-4 mt-4">
-            <chart-holder-card
-              title="Completed Tasks"
-              subtitle="Last Campaign Performance"
-              update="just updated"
-              color="dark"
-            >
-              <reports-line-chart
-                id="tasks-chart"
-                :chart="{
-                  labels: [
-                    'Apr',
-                    'May',
-                    'Jun',
-                    'Jul',
-                    'Aug',
-                    'Sep',
-                    'Oct',
-                    'Nov',
-                    'Dec',
-                  ],
-                  datasets: {
-                    label: 'Mobile apps',
-                    data: [50, 40, 300, 220, 500, 250, 400, 230, 500],
-                  },
-                }"
-              />
-            </chart-holder-card>
-          </div>
-        </div>
-      </div>
-    </div>
+  <div class="container-fluid py-4">
+    <div class="card p-4">
+      <h2 class="mb-4">Phone Bot Dashboard</h2>
 
-    <div class="row">
-      <div class="col-lg-8 col-md-6 mb-md-0 mb-4">
-        <project-card
-          title="Projects"
-          description="<i class='fa fa-check text-info' aria-hidden='true'></i> <span class='font-weight-bold ms-1'>30 done</span> this month"
-          :headers="['Companies', 'Members', 'Budget', 'Progress']"
-          :projects="[
-            {
-              logo: logoXD,
-              title: 'Material XD Material XD Version',
-              members: [team1, team2, team3, team4],
-              budget: '$14,000',
-              progress: { percentage: 60, color: 'info' },
-            },
-            {
-              logo: logoAtlassian,
-              title: 'Add Progress Track',
-              members: [team2, team4],
-              budget: '$3,000',
-              progress: { percentage: 10, color: 'info' },
-            },
-            {
-              logo: logoSlack,
-              title: 'Fix Platform Errors',
-              members: [team3, team1],
-              budget: 'Not set',
-              progress: { percentage: 100, color: 'success' },
-            },
-            {
-              logo: logoSpotify,
-              title: 'Launch our Mobile App',
-              members: [team4, team3, team4, team1],
-              budget: '$20,500',
-              progress: { percentage: 100, color: 'success' },
-            },
-            {
-              logo: logoJira,
-              title: 'Add the New Pricing Page',
-              members: [team4],
-              budget: '$500',
-              progress: { percentage: 25, color: 'info' },
-            },
-            {
-              logo: logoJira,
-              title: 'Redesign New Online Shop',
-              members: [team1, team4],
-              budget: '$2,000',
-              progress: { percentage: 40, color: 'info' },
-            },
-          ]"
-        />
+      <!-- Phone Bot Selection -->
+      <div class="mb-4">
+        <label for="phoneBot" class="form-label">Select Phone Bot:</label>
+        <select id="phoneBot" class="form-select mb-4" v-model="selectedBot">
+          <option v-for="bot in phoneBots" :key="bot.id" :value="bot.id">
+            <img :src="bot.image" alt="" class="me-2" style="width: 24px; height: 24px; vertical-align: middle;">
+            {{ bot.name }}
+          </option>
+        </select>
       </div>
-      <div class="col-lg-4 col-md-6">
-        <timeline-list
-          class="h-100"
-          title="Orders overview"
-          description="<i class='fa fa-arrow-up text-success' aria-hidden='true'></i>
-        <span class='font-weight-bold'>24%</span> this month"
-        >
-          <timeline-item
-            :icon="{
-              component: 'notifications',
-              class: 'text-success',
-            }"
-            title="$2400 Design changes"
-            date-time="22 DEC 7:20 PM"
-          />
-          <TimelineItem
-            :icon="{
-              component: 'code',
-              class: 'text-danger',
-            }"
-            title="New order #1832412"
-            date-time="21 DEC 11 PM"
-          />
-          <TimelineItem
-            :icon="{
-              component: 'shopping_cart',
-              class: 'text-info',
-            }"
-            title="Server payments for April"
-            date-time="21 DEC 9:34 PM"
-          />
-          <TimelineItem
-            :icon="{
-              component: 'credit_card',
-              class: 'text-warning',
-            }"
-            title="New card added for order #4395133"
-            date-time="20 DEC 2:20 AM"
-          />
-          <TimelineItem
-            :icon="{
-              component: 'vpn_key',
-              class: 'text-primary',
-            }"
-            title="Unlock packages for development"
-            date-time="18 DEC 4:54 AM"
-            class="pb-1"
-          />
-        </timeline-list>
+
+      <!-- Subject and Details -->
+      <div class="mb-4">
+        <h4 class="mb-3">Subject and Details</h4>
+        <div class="mb-3">
+          <label for="subject" class="form-label">Subject:</label>
+          <input type="text" id="subject" class="form-control border border-primary" v-model="subject" />
+        </div>
+        <div class="mb-3">
+          <label for="issueDetails" class="form-label">Issue Details:</label>
+          <textarea id="issueDetails" class="form-control border border-primary" rows="4" v-model="issueDetails"></textarea>
+        </div>
+      </div>
+
+      <!-- Save Button -->
+      <div class="text-end">
+        <button class="btn btn-primary" @click="saveConfiguration">Save Configuration</button>
       </div>
     </div>
   </div>
 </template>
+
 <script>
-import ChartHolderCard from "./components/ChartHolderCard.vue";
-import ReportsBarChart from "@/examples/Charts/ReportsBarChart.vue";
-import ReportsLineChart from "@/examples/Charts/ReportsLineChart.vue";
-import MiniStatisticsCard from "./components/MiniStatisticsCard.vue";
-import ProjectCard from "./components/ProjectCard.vue";
-import TimelineList from "@/examples/Cards/TimelineList.vue";
-import TimelineItem from "@/examples/Cards/TimelineItem.vue";
-import logoXD from "@/assets/img/small-logos/logo-xd.svg";
-import logoAtlassian from "@/assets/img/small-logos/logo-atlassian.svg";
-import logoSlack from "@/assets/img/small-logos/logo-slack.svg";
-import logoSpotify from "@/assets/img/small-logos/logo-spotify.svg";
-import logoJira from "@/assets/img/small-logos/logo-jira.svg";
-import logoInvision from "@/assets/img/small-logos/logo-invision.svg";
-import team1 from "@/assets/img/team-1.jpg";
-import team2 from "@/assets/img/team-2.jpg";
-import team3 from "@/assets/img/team-3.jpg";
-import team4 from "@/assets/img/team-4.jpg";
 export default {
-  name: "dashboard-default",
   data() {
     return {
-      logoXD,
-      team1,
-      team2,
-      team3,
-      team4,
-      logoAtlassian,
-      logoSlack,
-      logoSpotify,
-      logoJira,
-      logoInvision,
+      selectedBot: null,
+      subject: "",
+      issueDetails: "",
+      phoneBots: [
+        { id: 'slack', name: 'Slack', image: 'https://img.icons8.com/color/48/000000/slack-new.png' },
+        { id: 'spotify', name: 'Spotify', image: 'https://img.icons8.com/color/48/000000/spotify.png' },
+        { id: 'adobe', name: 'Adobe', image: 'https://img.icons8.com/ios/50/000000/adobe.png' },
+        { id: 'zoom', name: 'Zoom', image: 'https://img.icons8.com/color/48/000000/zoom.png' },
+      ],
     };
   },
-  components: {
-    ChartHolderCard,
-    ReportsBarChart,
-    ReportsLineChart,
-    MiniStatisticsCard,
-    ProjectCard,
-    TimelineList,
-    TimelineItem,
+  methods: {
+    saveConfiguration() {
+      alert("Configuration saved successfully!");
+      console.log("Selected Bot:", this.selectedBot);
+      console.log("Subject:", this.subject);
+      console.log("Issue Details:", this.issueDetails);
+    },
   },
 };
 </script>
+
+<style scoped>
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  padding: 20px;
+}
+
+.form-label {
+  font-weight: bold;
+}
+
+.form-select {
+  margin-bottom: 16px; /* Margin from bottom */
+}
+
+.form-select img {
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.border-primary {
+  border: 2px solid black; /* Blue border for input and textarea */
+}
+</style>

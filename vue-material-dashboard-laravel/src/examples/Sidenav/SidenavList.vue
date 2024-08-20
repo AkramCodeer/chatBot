@@ -32,13 +32,6 @@
         </sidenav-collapse>
       </li>
 
-      <li class="mt-3 nav-item">
-        <h6 class="text-xs ps-4 text-uppercase font-weight-bolder text-white"
-          :class="this.$store.state.isRTL ? 'me-4' : 'ms-2'">
-          EXAMPLES (API)
-        </h6>
-      </li>
-
       <li class="nav-item">
         <sidenav-collapse url="#" :aria-controls="''" v-bind:collapse="false" collapseRef="user-profile"
           navText="User Profile">

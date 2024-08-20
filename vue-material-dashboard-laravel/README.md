@@ -10,7 +10,7 @@ Vue Material Dashboard 2 is our newest free Admin Template based on Vue3 & Boots
 
 For the free version of the project you can either
 
-- download the .zip file from the Creative Tim site and extract it or
+- download the .zip file from the . site and extract it or
 - make a clone from the Github repository
 You will get two project folders: one for the Laravel API project and one for the Vue frontend.
 
@@ -51,7 +51,7 @@ You will get two project folders: one for the Laravel API project and one for th
 
 Quick start options:
 
-- Download from [Creative Tim](https://www.creative-tim.com/product/vue-material-dashboard-2?ref=readme-vmd2).
+- Download from [.](https://www.creative-tim.com/product/vue-material-dashboard-2?ref=readme-vmd2).
 
 ## Introduction
 
@@ -434,16 +434,16 @@ If you have questions or need help integrating the product please [contact us](h
 
 ## Licensing
 
-- Copyright 2022 [Creative Tim](https://www.creative-tim.com?ref=readme-vmd2)
-- Creative Tim [license](https://www.creative-tim.com/license?ref=readme-vmd2)
+- Copyright 2022 [.](https://www.creative-tim.com?ref=readme-vmd2)
+- . [license](https://www.creative-tim.com/license?ref=readme-vmd2)
 
 ## Useful Links
 
-- [More products](https://www.creative-tim.com/templates?ref=readme-vmd2) from Creative Tim
+- [More products](https://www.creative-tim.com/templates?ref=readme-vmd2) from .
 
 - [Tutorials](https://www.youtube.com/channel/UCVyTG4sCw-rOvB9oHkzZD1w)
 
-- [Freebies](https://www.creative-tim.com/bootstrap-themes/free?ref=readme-vmd2) from Creative Tim
+- [Freebies](https://www.creative-tim.com/bootstrap-themes/free?ref=readme-vmd2) from .
 
 - [Affiliate Program](https://www.creative-tim.com/affiliates/new?ref=readme-vmd2) (earn money)
 

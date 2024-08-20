@@ -9,21 +9,7 @@
             <div class="row">
 
                 <div class="header pt-10 w-100  d-flex justify-content-center">
-                    <div class="container">
-                        <div class="header-body text-center mb-7">
-                            <div class="row justify-content-center">
-                                <div class="text-center" style="margin-bottom: 5px;">
-                                    <h3 class="text-white"> Log in to Vue Material Dashboard 2 Laravel Live Preview </h3>
-                                    <p class="text-lead text-white"> Log in to see how you can go from frontend to fullstack
-                                        in an instant with an API-based Laravel backend. </p>
-                                </div>
-                                <div class="text-white">
-                                    <h3 class="text-white"><strong>You can log in with:</strong></h3>
-                                    <div> Username: <b>admin@jsonapi.com</b> &nbsp;&nbsp; Password: <b>secret</b></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
 
                 <div class="col-lg-4 col-md-8 col-12 mx-auto pb-10">
