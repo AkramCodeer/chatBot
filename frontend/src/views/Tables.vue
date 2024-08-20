@@ -52,7 +52,7 @@
                         <div class="d-flex flex-column justify-content-center">
                           <h6 class="mb-0 text-sm">John Michael</h6>
                           <p class="text-xs text-secondary mb-0">
-                            john@creative-tim.com
+                            john@google.com
                           </p>
                         </div>
                       </div>
@@ -95,7 +95,7 @@
                         <div class="d-flex flex-column justify-content-center">
                           <h6 class="mb-0 text-sm">Alexa Liras</h6>
                           <p class="text-xs text-secondary mb-0">
-                            alexa@creative-tim.com
+                            alexa@google.com
                           </p>
                         </div>
                       </div>
@@ -138,7 +138,7 @@
                         <div class="d-flex flex-column justify-content-center">
                           <h6 class="mb-0 text-sm">Laurent Perrier</h6>
                           <p class="text-xs text-secondary mb-0">
-                            laurent@creative-tim.com
+                            laurent@google.com
                           </p>
                         </div>
                       </div>
@@ -181,7 +181,7 @@
                         <div class="d-flex flex-column justify-content-center">
                           <h6 class="mb-0 text-sm">Michael Levi</h6>
                           <p class="text-xs text-secondary mb-0">
-                            michael@creative-tim.com
+                            michael@google.com
                           </p>
                         </div>
                       </div>
@@ -224,7 +224,7 @@
                         <div class="d-flex flex-column justify-content-center">
                           <h6 class="mb-0 text-sm">Richard Gran</h6>
                           <p class="text-xs text-secondary mb-0">
-                            richard@creative-tim.com
+                            richard@google.com
                           </p>
                         </div>
                       </div>
@@ -267,7 +267,7 @@
                         <div class="d-flex flex-column justify-content-center">
                           <h6 class="mb-0 text-sm">Miriam Eric</h6>
                           <p class="text-xs text-secondary mb-0">
-                            miriam@creative-tim.com
+                            miriam@google.com
                           </p>
                         </div>
                       </div>
