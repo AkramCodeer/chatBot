@@ -52,7 +52,7 @@
                         <div class="d-flex flex-column justify-content-center">
                           <h6 class="mb-0 text-sm">John Michael</h6>
                           <p class="text-xs text-secondary mb-0">
-                            john@google.com
+                            john@creative-tim.com
                           </p>
                         </div>
                       </div>
@@ -61,13 +61,11 @@
                       <p class="text-xs font-weight-bold mb-0">Manager</p>
                       <p class="text-xs text-secondary mb-0">Organization</p>
                     </td>
-                      <td class="align-middle text-center text-sm">
-    <!-- Dropdown for selecting status -->
-    <select v-model="status" @change="updateStatus" class="badge badge-sm" :style="badgeStyle">
-      <option value="online">Online</option>
-      <option value="offline">Offline</option>
-    </select>
-  </td>
+                    <td class="align-middle text-center text-sm">
+                      <span class="badge badge-sm bg-gradient-success"
+                        >Online</span
+                      >
+                    </td>
                     <td class="align-middle text-center">
                       <span class="text-secondary text-xs font-weight-bold"
                         >23/04/18</span
@@ -97,7 +95,7 @@
                         <div class="d-flex flex-column justify-content-center">
                           <h6 class="mb-0 text-sm">Alexa Liras</h6>
                           <p class="text-xs text-secondary mb-0">
-                            alexa@google.com
+                            alexa@creative-tim.com
                           </p>
                         </div>
                       </div>
@@ -106,13 +104,11 @@
                       <p class="text-xs font-weight-bold mb-0">Programator</p>
                       <p class="text-xs text-secondary mb-0">Developer</p>
                     </td>
-                     <td class="align-middle text-center text-sm">
-    <!-- Dropdown for selecting status -->
-    <select v-model="status" @change="updateStatus" class="badge badge-sm" :style="badgeStyle">
-      <option value="online">Online</option>
-      <option value="offline">Offline</option>
-    </select>
-  </td>
+                    <td class="align-middle text-center text-sm">
+                      <span class="badge badge-sm bg-gradient-secondary"
+                        >Offline</span
+                      >
+                    </td>
                     <td class="align-middle text-center">
                       <span class="text-secondary text-xs font-weight-bold"
                         >11/01/19</span
@@ -142,7 +138,7 @@
                         <div class="d-flex flex-column justify-content-center">
                           <h6 class="mb-0 text-sm">Laurent Perrier</h6>
                           <p class="text-xs text-secondary mb-0">
-                            laurent@google.com
+                            laurent@creative-tim.com
                           </p>
                         </div>
                       </div>
@@ -152,12 +148,10 @@
                       <p class="text-xs text-secondary mb-0">Projects</p>
                     </td>
                     <td class="align-middle text-center text-sm">
-    <!-- Dropdown for selecting status -->
-    <select v-model="status" @change="updateStatus" class="badge badge-sm" :style="badgeStyle">
-      <option value="online">Online</option>
-      <option value="offline">Offline</option>
-    </select>
-  </td>
+                      <span class="badge badge-sm bg-gradient-success"
+                        >Online</span
+                      >
+                    </td>
                     <td class="align-middle text-center">
                       <span class="text-secondary text-xs font-weight-bold"
                         >19/09/17</span
@@ -187,7 +181,7 @@
                         <div class="d-flex flex-column justify-content-center">
                           <h6 class="mb-0 text-sm">Michael Levi</h6>
                           <p class="text-xs text-secondary mb-0">
-                            michael@google.com
+                            michael@creative-tim.com
                           </p>
                         </div>
                       </div>
@@ -196,13 +190,11 @@
                       <p class="text-xs font-weight-bold mb-0">Programator</p>
                       <p class="text-xs text-secondary mb-0">Developer</p>
                     </td>
-                     <td class="align-middle text-center text-sm">
-    <!-- Dropdown for selecting status -->
-    <select v-model="status" @change="updateStatus" class="badge badge-sm" :style="badgeStyle">
-      <option value="online">Online</option>
-      <option value="offline">Offline</option>
-    </select>
-  </td>
+                    <td class="align-middle text-center text-sm">
+                      <span class="badge badge-sm bg-gradient-success"
+                        >Online</span
+                      >
+                    </td>
                     <td class="align-middle text-center">
                       <span class="text-secondary text-xs font-weight-bold"
                         >24/12/08</span
@@ -232,7 +224,7 @@
                         <div class="d-flex flex-column justify-content-center">
                           <h6 class="mb-0 text-sm">Richard Gran</h6>
                           <p class="text-xs text-secondary mb-0">
-                            richard@google.com
+                            richard@creative-tim.com
                           </p>
                         </div>
                       </div>
@@ -241,13 +233,11 @@
                       <p class="text-xs font-weight-bold mb-0">Manager</p>
                       <p class="text-xs text-secondary mb-0">Executive</p>
                     </td>
-                      <td class="align-middle text-center text-sm">
-    <!-- Dropdown for selecting status -->
-    <select v-model="status" @change="updateStatus" class="badge badge-sm" :style="badgeStyle">
-      <option value="online">Online</option>
-      <option value="offline">Offline</option>
-    </select>
-  </td>
+                    <td class="align-middle text-center text-sm">
+                      <span class="badge badge-sm bg-gradient-secondary"
+                        >Offline</span
+                      >
+                    </td>
                     <td class="align-middle text-center">
                       <span class="text-secondary text-xs font-weight-bold"
                         >04/10/21</span
@@ -277,7 +267,7 @@
                         <div class="d-flex flex-column justify-content-center">
                           <h6 class="mb-0 text-sm">Miriam Eric</h6>
                           <p class="text-xs text-secondary mb-0">
-                            miriam@google.com
+                            miriam@creative-tim.com
                           </p>
                         </div>
                       </div>
@@ -286,13 +276,11 @@
                       <p class="text-xs font-weight-bold mb-0">Programator</p>
                       <p class="text-xs text-secondary mb-0">Developer</p>
                     </td>
-                   <td class="align-middle text-center text-sm">
-    <!-- Dropdown for selecting status -->
-    <select v-model="status" @change="updateStatus" class="badge badge-sm" :style="badgeStyle">
-      <option value="online">Online</option>
-      <option value="offline">Offline</option>
-    </select>
-  </td>
+                    <td class="align-middle text-center text-sm">
+                      <span class="badge badge-sm bg-gradient-secondary"
+                        >Offline</span
+                      >
+                    </td>
                     <td class="align-middle text-center">
                       <span class="text-secondary text-xs font-weight-bold"
                         >14/09/20</span
@@ -683,33 +671,6 @@
 
 <script>
 export default {
-  name: "Tables",
-  data() {
-    return {
-      status: 'online' // Default status
-    };
-  },
-  computed: {
-    // Compute the badge styles based on the status
-    badgeStyle() {
-      return {
-        backgroundColor: this.status === 'online' ? '#198754' : '#6c757d', // Green for Online, Grey for Offline
-        color: 'white', // Text color is white
-      };
-    }
-  },
-  methods: {
-    // Method to handle status change
-    updateStatus() {
-      // Additional logic when status changes can be added here
-    }
-  }
+  name: "tables",
 };
 </script>
-
-<style scoped>
-/* Scoped styles for the badge */
-.badge {
-  border: none; /* Remove default border if necessary */
-}
-</style>
