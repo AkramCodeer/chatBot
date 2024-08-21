@@ -42,7 +42,7 @@
 
     <!-- Render Table of Saved Issues -->
     <div v-if="savedIssues.length > 0" class="card mt-4 p-4">
-      <h4>Saved Issues</h4>
+      <h4>Saved</h4>
       <table class="table table-bordered mt-3">
         <thead>
           <tr>

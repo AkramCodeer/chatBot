@@ -157,11 +157,7 @@ export default {
   name: "PhoneBotUsersList",
   data() {
     return {
-      users: JSON.parse(localStorage.getItem('users')) || [
-        { id: 1, company: 'Acme Corp', name: 'Bot A', licenseKey: 'ABC123', status: 'running' },
-        { id: 2, company: 'Beta LLC', name: 'Bot B', licenseKey: 'DEF456', status: 'connected' },
-        { id: 3, company: 'Gamma Inc', name: 'Bot C', licenseKey: 'GHI789', status: 'paused' }
-      ],
+      users: JSON.parse(localStorage.getItem('users')) || [],
       showAddUserModal: false,
       showEditUserModal: false,
       showViewUserModal: false,
@@ -190,10 +186,11 @@ export default {
     },
     addUser() {
       if (this.newUser.company && this.newUser.name && this.newUser.licenseKey) {
-        this.users.push({
-          id: this.users.length + 1, // Simple id increment for demo
+        const newUser = {
+          id: this.users.length + 1,
           ...this.newUser
-        });
+        };
+        this.users.push(newUser);
         this.saveToLocalStorage();
         this.newUser = { company: '', name: '', licenseKey: '', status: 'running' };
         this.closeAddUserModal();
@@ -217,7 +214,6 @@ export default {
     deleteUser(userId) {
       this.users = this.users.filter(user => user.id !== userId);
       this.saveToLocalStorage();
-      console.log("User deleted:", userId);
     },
     viewUser(user) {
       this.viewUserDetails = { ...user };
@@ -232,6 +228,7 @@ export default {
   }
 };
 </script>
+
 
 <style scoped>
 .container {

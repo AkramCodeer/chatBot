@@ -7,7 +7,7 @@
     >
       <span class="mask bg-gradient-success opacity-6"></span>
     </div>
-    
+
     <!-- Profile Card Section -->
     <div class="card card-body mx-3 mx-md-4 mt-n6">
       <div class="row gx-4">
@@ -69,6 +69,41 @@
           </form>
         </div>
       </div>
+
+      <!-- Phone Bot Table Section -->
+      <div v-if="savedIssues.length > 0" class="card mt-4 p-4">
+        <h4>Phone Bot</h4>
+        <table class="table table-bordered mt-3">
+          <thead>
+            <tr>
+              <th>Phone Bot</th>
+              <th>Subject</th>
+              <th>Issue Details</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="issue in savedIssues" :key="issue.id">
+              <td>{{ issue.botName }}</td>
+              <td v-if="!issue.isEditing">{{ issue.subject }}</td>
+              <td v-else><input v-model="issue.subject" /></td>
+              <td v-if="!issue.isEditing">{{ issue.details }}</td>
+              <td v-else><textarea v-model="issue.details"></textarea></td>
+              <td>
+                <button @click="editIssue(issue)" v-if="!issue.isEditing">
+                  <i class="fas fa-edit"></i>
+                </button>
+                <button @click="saveIssue(issue)" v-else>
+                  <i class="fas fa-save"></i>
+                </button>
+                <button @click="deleteIssue(issue.id)">
+                  <i class="fas fa-trash-alt"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </template>
@@ -84,6 +119,7 @@ export default {
       dob: "",
       profileImage: require("@/assets/img/bruce-mars.jpg"),
       headerImage: "https://images.unsplash.com/photo-1531512073830-ba890ca4eba2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80",
+      savedIssues: [] // Holds the list of saved issues from Phone Bot Dashboard
     };
   },
   methods: {
@@ -102,10 +138,10 @@ export default {
         dob: this.dob,
         profileImage: this.profileImage,
       };
-      
+
       // Save to local storage
       localStorage.setItem('userProfile', JSON.stringify(profileData));
-      
+
       alert("Profile updated successfully!");
 
       // Future integration with MySQL could be done here
@@ -121,10 +157,28 @@ export default {
         this.dob = parsedProfile.dob;
         this.profileImage = parsedProfile.profileImage;
       }
+    },
+    loadPhoneBotIssues() {
+      const issues = localStorage.getItem("issues");
+      if (issues) {
+        this.savedIssues = JSON.parse(issues);
+      }
+    },
+    editIssue(issue) {
+      issue.isEditing = true;
+    },
+    saveIssue(issue) {
+      issue.isEditing = false;
+      localStorage.setItem("issues", JSON.stringify(this.savedIssues));
+    },
+    deleteIssue(issueId) {
+      this.savedIssues = this.savedIssues.filter(issue => issue.id !== issueId);
+      localStorage.setItem("issues", JSON.stringify(this.savedIssues));
     }
   },
   mounted() {
     this.loadProfile();
+    this.loadPhoneBotIssues(); // Load Phone Bot when the component is mounted
   }
 };
 </script>
@@ -144,5 +198,38 @@ export default {
   width: 100%;
   height: 100%;
   cursor: pointer;
+}
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  padding: 20px;
+}
+.table {
+  margin-top: 20px;
+}
+.fas {
+  cursor: pointer;
+  margin: 0 5px;
+  font-size: 1.2em;
+  transition: color 0.3s ease;
+}
+.fas.fa-edit {
+  color: #007bff;
+}
+.fas.fa-edit:hover {
+  color: #0056b3;
+}
+.fas.fa-save {
+  color: #28a745;
+}
+.fas.fa-save:hover {
+  color: #218838;
+}
+.fas.fa-trash-alt {
+  color: #dc3545;
+}
+.fas.fa-trash-alt:hover {
+  color: #c82333;
 }
 </style>
