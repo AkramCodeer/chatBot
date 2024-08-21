@@ -41,7 +41,7 @@
         </sidenav-collapse>
       </li>
       <li class="nav-item">
-        <sidenav-collapse url="#" :aria-controls="''" v-bind:collapse="false" collapseRef="users" navText="Users">
+        <sidenav-collapse url="#" :aria-controls="''" v-bind:collapse="false" collapseRef="users" navText="Profile">
           <template v-slot:icon>
             <i class="material-icons-round opacity-10 fs-5">people</i>
           </template>
@@ -58,9 +58,9 @@
       </li>
 
       <li class="nav-item">
-        <sidenav-collapse url="#" :aria-controls="''" v-bind:collapse="false" collapseRef="profile" navText="Profile">
+        <sidenav-collapse url="#" :aria-controls="''" v-bind:collapse="false" collapseRef="profile" navText="Settings">
           <template v-slot:icon>
-            <i class="material-icons-round opacity-10 fs-5">person</i>
+            <i class="material-icons-round opacity-10 fs-5">settings</i>
           </template>
         </sidenav-collapse>
       </li>

@@ -1,5 +1,36 @@
 <template>
   <div class="container py-4">
+    <div class="container-fluid">
+    <!-- Profile Header Section -->
+    <div
+      class="page-header min-height-300 border-radius-xl mt-4"
+      :style="{ backgroundImage: `url(${headerImage})` }"
+    >
+      <span class="mask bg-gradient-success opacity-6"></span>
+    </div>
+
+    <!-- Profile Card Section -->
+    <div class="card card-body mx-3 mx-md-4 mt-n6">
+      <div class="row gx-4">
+        <div class="col-auto">
+          <div class="avatar avatar-xl position-relative">
+            <img
+              :src="profileImage"
+              alt="profile_image"
+              class="shadow-sm w-100 border-radius-lg"
+            />
+            <input type="file" @change="uploadProfileImage" class="upload-input"/>
+          </div>
+        </div>
+        <div class="col-auto my-auto">
+          <div class="h-100">
+            <h5 class="mb-1">{{ name }}</h5>
+            <p class="mb-0 font-weight-normal text-sm">{{ company }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
     <div class="mt-4 user">
       <div class="col-12">
         <div class="card">
@@ -154,9 +185,15 @@
 
 <script>
 export default {
-  name: "PhoneBotUsersList",
+  name: "UserManagement",
   data() {
     return {
+      // Profile Data
+      name: "",
+      company: "",
+      profileImage: "",
+      headerImage: "https://images.unsplash.com/photo-1531512073830-ba890ca4eba2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80",
+      // User List Data
       users: JSON.parse(localStorage.getItem('users')) || [],
       showAddUserModal: false,
       showEditUserModal: false,
@@ -178,6 +215,34 @@ export default {
     };
   },
   methods: {
+    // Profile Methods
+    uploadProfileImage(event) {
+      const file = event.target.files[0];
+      if (file) {
+        this.profileImage = URL.createObjectURL(file);
+        this.saveToLocalStorage(); // Save profile data to local storage
+      }
+    },
+    saveProfile() {
+      const profileData = {
+        name: this.name,
+        company: this.company,
+        profileImage: this.profileImage,
+      };
+      localStorage.setItem('userProfile', JSON.stringify(profileData));
+      alert("Profile updated successfully!");
+    },
+    loadProfile() {
+      const savedProfile = localStorage.getItem('userProfile');
+      if (savedProfile) {
+        const parsedProfile = JSON.parse(savedProfile);
+        this.name = parsedProfile.name || "";
+        this.company = parsedProfile.company || "";
+        this.profileImage = parsedProfile.profileImage || "";
+      }
+    },
+
+    // User List Methods
     openAddUserModal() {
       this.showAddUserModal = true;
     },
@@ -225,9 +290,13 @@ export default {
     saveToLocalStorage() {
       localStorage.setItem('users', JSON.stringify(this.users));
     }
+  },
+  mounted() {
+    this.loadProfile(); // Load profile data from local storage when the component is mounted
   }
 };
 </script>
+
 
 
 <style scoped>
@@ -368,5 +437,27 @@ export default {
 .btn-cancel:hover {
   background-color: #5a6268;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.container-fluid {
+  padding: 20px;
+}
+.avatar-xl {
+  position: relative;
+}
+.upload-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  padding: 20px;
 }
 </style>
